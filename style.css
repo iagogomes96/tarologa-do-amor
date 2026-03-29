@@ -1,0 +1,623 @@
+/* Reset e Base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Rolagem suave nativa para links âncora */
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    overflow-x: hidden;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+address {
+    font-style: normal;
+}
+
+/* Acessibilidade de Teclado (Foco) */
+a:focus-visible,
+button:focus-visible {
+    outline: 3px dashed #4cd137;
+    outline-offset: 4px;
+}
+
+/* Semântica estrutural substituta das DIVs .container */
+.hero-inner,
+.sobre-inner,
+.servicos-inner,
+.depoimentos-inner,
+.contato-inner,
+.atendimento-inner,
+.cta-inner,
+.footer-inner {
+    max-width: 1280px;
+    /* Expandido para acomodar melhor Telas Widescreen */
+    margin: 0 auto;
+    padding: 0 clamp(20px, 5vw, 40px);
+    /* Padding fluido responsivo (Mobile a Desktop) */
+    width: 100%;
+}
+
+/* Títulos de Seção */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    background-color: #a9b2c3;
+    color: #1a3673;
+    font-weight: 800;
+    font-size: clamp(1rem, 3vw, 1.2rem);
+    padding: 10px 40px;
+    border-radius: 30px;
+    display: inline-block;
+}
+
+/* Botão WhatsApp */
+.btn-whatsapp {
+    background-color: #4cd137;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 12px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+}
+
+.btn-whatsapp:hover {
+    background-color: #44bd32;
+    transform: scale(1.05);
+}
+
+.btn-whatsapp svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor;
+}
+
+/* Seção Hero */
+.hero {
+    background-image: radial-gradient(circle at center, rgba(27, 83, 166, 0.85) 0%, rgba(13, 50, 112, 0.95) 100%), url('img/background-home.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 40px 20px 80px;
+    position: relative;
+}
+
+.hero-profile-container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.hero-profile {
+    width: 256px;
+    height: 256px;
+    margin: 0 auto;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+.hero-video-figure {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-video-figure video {
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 360px;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    background-color: #000;
+}
+
+.hero-text {
+    flex: 1.2;
+    color: white;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+}
+
+.hero-text h1 .highlight {
+    color: #48dbfb;
+}
+
+.hero-text p {
+    font-size: clamp(1rem, 2.5vw, 1.05rem);
+    margin-bottom: 30px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+/* Seção Sobre */
+.sobre {
+    background-color: #ffffff;
+    padding: 80px 20px;
+}
+
+.sobre-content {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    align-items: center;
+}
+
+@media (min-width: 850px) {
+    .sobre-content {
+        flex-direction: row;
+    }
+}
+
+.sobre-text {
+    flex: 1;
+    color: #3b5284;
+    font-weight: 500;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: center;
+}
+
+.sobre-text p {
+    margin-bottom: 20px;
+}
+
+.sobre-social {
+    margin-top: 40px;
+}
+
+.sobre-social h3 {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    color: #1a3673;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    color: white;
+    transition: transform 0.3s;
+}
+
+.social-icons a:hover {
+    transform: translateY(-5px);
+}
+
+.bg-instagram {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.bg-tiktok {
+    background-color: #000000;
+}
+
+.social-icons svg {
+    width: 22px;
+    height: 22px;
+    fill: white;
+}
+
+.sobre-image-figure {
+    flex: 1;
+    width: 100%;
+}
+
+.sobre-image-figure img {
+    border-radius: 40px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    width: 100%;
+}
+
+.servicos {
+    background-image: linear-gradient(135deg, rgba(28, 29, 90, 0.85) 0%, rgba(47, 42, 122, 0.95) 100%), url('img/background-services.webp');
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 80px 20px;
+}
+
+.servicos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 40px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card-icon-wrapper {
+    background-color: #a9b2c3;
+    width: 65px;
+    height: 65px;
+    border-radius: 20px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.card-icon-wrapper svg {
+    width: 35px;
+    height: 35px;
+    fill: #1a3673;
+}
+
+.card h3 {
+    color: #111;
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+.col-span-full {
+    grid-column: 1 / -1;
+}
+
+.card-wide-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+    width: 100%;
+}
+
+/* Responsividade Intermediária para Tablets (4:3) */
+@media (min-width: 650px) and (max-width: 991px) {
+    .card-wide-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .card-subitem:last-child {
+        grid-column: 1 / -1;
+    }
+}
+
+/* Responsividade Desktop/Widescreen */
+@media (min-width: 992px) {
+    .card-wide-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+
+.card-subitem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.bottom-cards-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 100%;
+}
+
+@media (min-width: 850px) {
+    .bottom-cards-flex {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .bottom-cards-flex>.card {
+        width: 100%;
+        max-width: 380px;
+    }
+
+    /* Ajuste proporcional ao novo grid de 1280px */
+}
+
+/* Seção Depoimentos */
+.depoimentos {
+    background-color: #ffffff;
+    padding: 80px 20px;
+}
+
+.depoimentos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: center;
+}
+
+.video-wrapper {
+    width: 100%;
+    max-width: 500px;
+    aspect-ratio: 16 / 9;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s;
+    background-color: #000;
+}
+
+.video-wrapper:hover {
+    transform: translateY(-8px);
+}
+
+.video-wrapper iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Wrapper Compartilhado para Contato e Atendimento (Parallax Contínuo) */
+.contato-atendimento-wrapper {
+    background-image: linear-gradient(135deg, rgba(42, 44, 107, 0.85) 0%, rgba(26, 27, 75, 0.95) 100%), url(img/background-contact.webp);
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* Contato */
+.contato {
+    padding: 80px 20px 40px;
+    /* Reduzi o padding inferior para emendar melhor com a próxima seção */
+    text-align: center;
+    color: white;
+}
+
+.contato-profile {
+    width: 240px;
+    height: 240px;
+    margin: 0 auto 30px;
+}
+
+.contato-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.contato-list li {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: clamp(1rem, 3vw, 1.3rem);
+    font-weight: 800;
+    word-break: break-word;
+}
+
+.contato-list img {
+    width: 30px;
+    height: 30px;
+}
+
+/* Atendimento */
+.atendimento { padding: 40px 20px 80px; color: white; text-align: center; }
+.atendimento-subtitle { font-size: clamp(1.6rem, 4vw, 2.2rem); font-weight: 800; margin-bottom: 60px; line-height: 1.3; }
+.atendimento-subtitle .highlight { color: #48dbfb; }
+.atendimento-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 50px; max-width: 900px; margin: 0 auto; align-items: start; }
+.atendimento-col { display: flex; flex-direction: column; gap: 15px; }
+.atendimento-col h3 { font-size: 1.5rem; margin-bottom: 10px; font-weight: 800; }
+.atendimento-col p { font-size: 1.1rem; line-height: 1.6; font-weight: 500; }
+
+/* Mapa Otimizado e Responsivo */
+.map-wrapper { width: 100%; max-width: 900px; margin: 0 auto; }
+.map-wrapper img, .map-wrapper iframe { 
+    margin-top: 20px;
+    width: 100%; 
+    border-radius: 15px; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+    border: none;
+    display: block;
+}
+.map-wrapper iframe {
+    aspect-ratio: 21 / 9; /* Proporção widescreen para preencher a tela */
+    min-height: 300px;
+    background-color: #e5e3df;
+}
+
+/* CTA Final */
+.cta-final {
+    background: radial-gradient(circle at center, #1b53a6 0%, #0d31707e 100%), url(img/background-cta.webp);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.cta-final h2 {
+    color: white;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+    font-weight: 800;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.cta-final h2 .highlight {
+    color: #48dbfb;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px 20px;
+}
+
+.footer-line {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    margin: 0 auto 30px;
+    width: 100%;
+}
+
+footer p {
+    font-size: 0.85rem;
+    color: #ccc;
+}
+
+.text-white {
+    color: #ffffff !important;
+}
+
+.icon-bg-white {
+    background-color: #ffffff;
+    border-radius: 50%;
+}
+
+/* WhatsApp Flutuante */
+.whatsapp-float {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 100;
+}
+
+.whatsapp-float a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: clamp(55px, 6vw, 65px);
+    height: clamp(55px, 6vw, 65px);
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.whatsapp-float a:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-float a:focus-visible {
+    border-radius: 50%;
+    outline-offset: 6px;
+}
+
+.whatsapp-float svg {
+    width: 55%;
+    height: 55%;
+    fill: white;
+}
+
+/* Fix de Performance Parallax Mobile (Melhora a nota do Google impedindo lags no iOS/Android) */
+@media (hover: none) and (pointer: coarse) {
+
+    .hero,
+    .servicos,
+    .contato-atendimento-wrapper {
+        background-attachment: scroll;
+    }
+}
+
+/* --- ANIMAÇÕES DE SCROLL (FADE IN) --- */
+.js .fade-hero-left,
+.js .fade-hero-right,
+.js .fade-up {
+    opacity: 0;
+    will-change: opacity, transform;
+    transition: opacity 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition-delay: var(--delay, 0s);
+}
+
+/* Hero: Foto vem da esquerda e levemente de baixo */
+.js .fade-hero-left {
+    transform: translate(-50px, 30px);
+}
+
+/* Hero: Texto vem da direita e levemente de baixo (se encontrando no centro) */
+.js .fade-hero-right {
+    transform: translate(50px, 30px);
+}
+
+/* Serviços e demais seções: Vem de baixo para cima */
+.js .fade-up {
+    transform: translateY(60px);
+}
+
+/* Estado final quando o elemento entra na tela do usuário */
+.js .is-visible {
+    opacity: 1;
+    transform: translate(0, 0);
+}
