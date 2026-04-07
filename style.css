@@ -307,8 +307,8 @@ button:focus-visible {
 
 .card-icon-wrapper {
     background-color: #a9b2c3;
-    width: 65px;
-    height: 65px;
+    width: 60px;
+    height: 60px;
     border-radius: 20px;
     display: inline-flex;
     justify-content: center;
